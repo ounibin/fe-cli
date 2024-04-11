@@ -4,24 +4,24 @@ import fs from 'fs'
 import inquirer from 'inquirer'
 
 async function init(targetDir) {
-  const quesion = [{
-    type: 'list',
-    name: 'templateName',
-    message: '选择模板',
-    choices: [
-      'vue3',
-      'nuxt3'
-    ]
-  }]
+  const templateMap = {
+    'h5-vue3': 'https://git.nykjsrv.cn/front-end/template-vue3',
+    'h5-nuxt3': 'https://git.nykjsrv.cn/front-end/template-nuxt3',
+    // 'pc-vue3': 'https://git.nykjsrv.cn/front-end/template-pc-vue3',
+    'miniapp-uniapp': 'https://git.nykjsrv.cn/front-end/template-miniapp',
+  }
+
+  const quesion = [
+    {
+      type: 'list',
+      name: 'templateName',
+      message: '选择模板',
+      choices: Object.keys(templateMap),
+    },
+  ]
 
   const answer = await inquirer.prompt(quesion)
   const { templateName } = answer
-
-  const templateMap = {
-    'vue3': 'https://git.nykjsrv.cn/front-end/template-vue3',
-    'nuxt3': 'https://git.nykjsrv.cn/front-end/template-nuxt3'
-  }
-
 
   const gitUrl = templateMap[templateName]
 
@@ -45,5 +45,5 @@ async function init(targetDir) {
   // shell.exec(`sed -i '' -e "s/xxx/${env}/g" ./xxx/package.json`)
   spinner.stop()
 }
-// init()
+
 export default init

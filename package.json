@@ -1,32 +1,38 @@
 {
-  "name": "cli",
+  "name": "@ounibin/fe-cli",
   "version": "0.0.1",
   "type": "module",
   "main": "./src/index.js",
   "author": "wangkj",
   "license": "MIT",
+  "github": "https://github.com/ounibin/fe-cli",
   "bin": {
-    "ny": "src/index.js"
+    "fe": "bin/index.mjs"
   },
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
-    "preinstall": "npx only-allow pnpm"
+    "dev": "rollup -cw",
+    "build": "rollup -c rollup.config.js"
   },
   "dependencies": {
     "commander": "^8.1.0",
-    "inquirer": "^9.2.15",
+    "inquirer": "^8.2.6",
     "ora": "^5.3.0",
     "shelljs": "^0.8.4"
   },
   "devDependencies": {
-    "eslint": "^8.0.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
     "eslint-plugin-prettier": "^5.1.3",
-    "nodemon": "^3.1.0"
+    "eslint-plugin-promise": "^6.0.0",
+    "rollup": "^4.13.0"
   },
   "engines": {
-    "node": ">=18.17.1",
-    "pnpm": ">=8.0.0"
+    "node": "18.17.1"
   }
 }
