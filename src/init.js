@@ -5,10 +5,7 @@ import inquirer from 'inquirer'
 
 async function init(targetDir) {
   const templateMap = {
-    'h5-vue3': 'https://git.nykjsrv.cn/front-end/template-vue3',
-    'h5-nuxt3': 'https://git.nykjsrv.cn/front-end/template-nuxt3',
-    // 'pc-vue3': 'https://git.nykjsrv.cn/front-end/template-pc-vue3',
-    'miniapp-uniapp': 'https://git.nykjsrv.cn/front-end/template-miniapp',
+    'h5-vue3': 'https://github.com/ounibin/template-vue3'
   }
 
   const quesion = [
