@@ -12,3 +12,8 @@ npm install -g @ounibin/fe-cli
 fe init my-new-project
 ```
 初始化项目，使用命令行：``` fe init <项目名称> ``` 即可创建项目
+
+
+
+## 开发
+先安装volta，本项目使用volta来管理node版本，```npm i -g volta```
